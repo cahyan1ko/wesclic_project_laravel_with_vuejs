@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue + Laravel</title>
+    <title></title>
 
-    <!-- Tailwind CDN -->
     <script type="module">
         import "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
     </script>
@@ -22,6 +21,7 @@
       },
     }
   </script>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 
 <body class="bg-[#F9FAFB] text-gray-900">
@@ -29,4 +29,5 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </body>
+
 </html>
