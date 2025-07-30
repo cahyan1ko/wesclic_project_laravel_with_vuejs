@@ -13,7 +13,7 @@
         </thead>
         <tbody>
           <tr
-            v-for="(product, index) in products"
+            v-for="(product, index) in paginatedProducts"
             :key="product.id"
             class="hover:bg-gray-50 transition-all duration-200"
           >
@@ -45,22 +45,51 @@
                 </button>
               </div>
             </td>
-
           </tr>
         </tbody>
       </table>
+
+      <div class="flex justify-end mt-4 mr-10">
+        <div class="space-x-1">
+          <button
+            v-for="page in totalPages"
+            :key="page"
+            @click="currentPage = page"
+            class="px-3 py-1 text-sm font-medium rounded-md border transition"
+            :class="{
+              'bg-[#5D5FEF] text-white border-[#5D5FEF]': currentPage === page,
+              'bg-white text-gray-700 border-gray-300 hover:bg-gray-100': currentPage !== page
+            }"
+          >
+            {{ page }}
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref, computed } from 'vue'
 import Swal from 'sweetalert2'
 
-defineProps({
+const props = defineProps({
   products: Array
 })
 
 const emit = defineEmits(['edit', 'delete'])
+
+const itemsPerPage = 10
+const currentPage = ref(1)
+
+const totalPages = computed(() => {
+  return Math.ceil(props.products.length / itemsPerPage)
+})
+
+const paginatedProducts = computed(() => {
+  const start = (currentPage.value - 1) * itemsPerPage
+  return props.products.slice(start, start + itemsPerPage)
+})
 
 const confirmDelete = async (id) => {
   const result = await Swal.fire({
@@ -83,6 +112,10 @@ const confirmDelete = async (id) => {
       timer: 2000,
       showConfirmButton: false
     })
+
+    if (paginatedProducts.value.length === 1 && currentPage.value > 1) {
+      currentPage.value -= 1
+    }
   }
 }
 </script>
