@@ -5,12 +5,22 @@
         <h2 class="text-lg font-semibold">Today's Sales</h2>
         <p class="text-xs text-gray-500 font-light">Sales Summary</p>
       </div>
-      <button
-        class="bg-white cursor-pointer text-[#0F3659] border border-gray-300 px-4 py-2 rounded-lg hover:bg-[#f4f4f4] text-sm flex items-center gap-2"
+      <Button
+        text="Export"
+        textColor="#0F3659"
+        bgColor="#FFFFFF"
+        hoverColor="#f4f4f4"
+        hoverTextColor="#0F3659"
+        padding="0.5rem 1rem"
+        fontSize="0.875rem"
+        borderRadius="0.5rem"
+        border="1px solid #D1D5DB"
       >
-        <img src="/assets/icons/export-icon.png" alt="Export Icon" class="w-4 h-4" />
-        Export
-      </button>
+        <template #icon>
+          <img src="/assets/icons/export-icon.png" alt="Export Icon" class="w-4 h-4" />
+        </template>
+      </Button>
+
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
       <div

@@ -25,12 +25,16 @@ const props = defineProps({
       borderRadius,
       border,
       cursor: 'pointer',
+      display: 'flex',
+      alignItems: 'center',
+      gap: '0.5rem',
     }"
     :initial="{ scale: 1, opacity: 0 }"
     :animate="{ scale: 1, opacity: 1 }"
     :whileHover="{ scale: 1.05, backgroundColor: hoverColor, color: hoverTextColor }"
     :transition="{ type: 'spring', stiffness: 300 }"
   >
+    <slot name="icon" />
     {{ text }}
   </motion.button>
 </template>
