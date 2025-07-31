@@ -50,48 +50,45 @@
       </table>
 
       <div class="flex justify-center items-center mt-4 mr-10 space-x-2">
-  <!-- Tombol Previous -->
-  <button
-    @click="currentPage > 1 && currentPage--"
-    :disabled="currentPage === 1"
-    class="px-3 py-1 text-sm font-medium rounded-md border transition flex items-center space-x-1"
-    :class="{
-      'bg-white text-gray-700 border-gray-300 hover:bg-gray-100': currentPage > 1,
-      'text-gray-400 bg-gray-100 border-gray-200 cursor-not-allowed': currentPage === 1
-    }"
-  >
-    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-    </svg>
-    <span>Prev</span>
-  </button>
+      <button
+        @click="currentPage > 1 && currentPage--"
+        :disabled="currentPage === 1"
+        class="px-3 py-1 text-sm font-medium rounded-md border transition flex items-center space-x-1"
+        :class="{
+          'bg-white text-gray-700 border-gray-300 hover:bg-gray-100': currentPage > 1,
+          'text-gray-400 bg-gray-100 border-gray-200 cursor-not-allowed': currentPage === 1
+        }"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        <span>Prev</span>
+      </button>
 
-  <!-- Nomor Halaman -->
-  <div class="space-x-1">
-    <button
-      v-for="page in totalPages"
-      :key="page"
-      @click="currentPage = page"
-      class="px-3 py-1 text-sm font-medium rounded-md border transition"
-      :class="{
-        'bg-[#5D5FEF] text-white border-[#5D5FEF]': currentPage === page,
-        'bg-white text-gray-700 border-gray-300 hover:bg-gray-100': currentPage !== page
-      }"
-    >
-      {{ page }}
-    </button>
-  </div>
+      <div class="space-x-1">
+        <button
+          v-for="page in totalPages"
+          :key="page"
+          @click="currentPage = page"
+          class="px-3 py-1 text-sm font-medium rounded-md border transition"
+          :class="{
+            'bg-[#5D5FEF] text-white border-[#5D5FEF]': currentPage === page,
+            'bg-white text-gray-700 border-gray-300 hover:bg-gray-100': currentPage !== page
+          }"
+        >
+          {{ page }}
+        </button>
+      </div>
 
-  <!-- Tombol Next -->
-  <button
-    @click="currentPage < totalPages && currentPage++"
-    :disabled="currentPage === totalPages"
-    class="px-3 py-1 text-sm font-medium rounded-md border transition flex items-center space-x-1"
-    :class="{
-      'bg-white text-gray-700 border-gray-300 hover:bg-gray-100': currentPage < totalPages,
-      'text-gray-400 bg-gray-100 border-gray-200 cursor-not-allowed': currentPage === totalPages
-    }"
-  >
+      <button
+        @click="currentPage < totalPages && currentPage++"
+        :disabled="currentPage === totalPages"
+        class="px-3 py-1 text-sm font-medium rounded-md border transition flex items-center space-x-1"
+        :class="{
+          'bg-white text-gray-700 border-gray-300 hover:bg-gray-100': currentPage < totalPages,
+          'text-gray-400 bg-gray-100 border-gray-200 cursor-not-allowed': currentPage === totalPages
+        }"
+      >
     <span>Next</span>
     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
