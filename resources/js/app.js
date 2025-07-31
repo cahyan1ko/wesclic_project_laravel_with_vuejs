@@ -14,6 +14,7 @@ import VisitorInsight from "./components/Graph/VisitorInsight.vue";
 import VolumeService from "./components/Graph/VolumeService.vue";
 import SalesMapping from "./components/Graph/SalesMapping.vue";
 import CustomerSatisfaction from "./components/Graph/CustomerSatisfaction.vue";
+import HeaderDashboard from "./layouts/Header/Header.vue";
 
 app.component("TodaySales", TodaySales);
 app.component("TotalRevenue", TotalRevenue);
@@ -23,5 +24,6 @@ app.component("VisitorInsight", VisitorInsight);
 app.component("VolumeService", VolumeService);
 app.component("SalesMapping", SalesMapping);
 app.component("CustomerSatisfaction", CustomerSatisfaction);
+app.component("HeaderDashboard", HeaderDashboard);
 
 app.mount("#app");

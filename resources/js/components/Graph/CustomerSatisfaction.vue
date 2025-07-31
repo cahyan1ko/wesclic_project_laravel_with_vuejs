@@ -45,7 +45,7 @@ export default {
             datasets: [
               {
                 label: 'Last Month',
-                data: [60, 65, 70, 68, 72, 75, 74],
+                data: Array.from({ length: 7 }, () => Math.floor(Math.random() * (75 - 60 + 1)) + 60),
                 borderColor: '#05C283',
                 backgroundColor: 'transparent',
                 tension: 0.4,
@@ -54,7 +54,7 @@ export default {
               },
               {
                 label: 'This Month',
-                data: [66, 70, 74, 73, 76, 80, 82],
+                data: Array.from({ length: 7 }, () => Math.floor(Math.random() * (85 - 66 + 1)) + 66),
                 borderColor: '#0095FF',
                 backgroundColor: 'transparent',
                 tension: 0.4,

@@ -1,7 +1,7 @@
 <template>
   <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm">
     <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-6 animate-fade-in">
-      <h2 class="text-2xl font-bold text-gray-800 mb-6">Edit Produk</h2>
+      <h2 class="text-2xl font-bold text-[#5D5FEF] mb-6">Edit Produk</h2>
       <form @submit.prevent="submitForm" class="space-y-4">
         <div>
           <label class="block text-sm text-gray-600 mb-1">Nama Produk</label>

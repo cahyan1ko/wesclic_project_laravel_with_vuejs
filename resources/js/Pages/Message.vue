@@ -1,4 +1,5 @@
 <template>
+  <HeaderDashboard title="Message" :show-search="false"/>
   <div class="flex items-center justify-center min-h-screen bg-[#F9FAFB]">
     <div class="text-center">
       <h1 class="text-4xl md:text-6xl font-bold text-[#5D5FEF] mb-4">Message Coming Soon...</h1>
@@ -8,4 +9,6 @@
 </template>
 
 <script setup>
+import HeaderDashboard from '../layouts/Header/Header.vue';
+
 </script>

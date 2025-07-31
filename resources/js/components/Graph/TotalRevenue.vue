@@ -24,20 +24,20 @@ const chartRef = ref(null)
 onMounted(() => {
   const ctx = chartRef.value.getContext('2d')
   new Chart(ctx, {
-    type: 'bar',
-    data: {
+      type: 'bar',
+      data: {
       labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
       datasets: [
         {
           label: 'Online Sales',
-          data: [5000, 12000, 8000, 10000, 20000, 15000, 22000],
+          data: Array.from({ length: 7 }, () => Math.floor(Math.random() * (25000 - 5000 + 1)) + 5000),
           backgroundColor: '#0095FF',
           borderRadius: 6,
           barThickness: 12
         },
         {
           label: 'Offline Sales',
-          data: [3000, 9000, 6000, 7000, 15000, 11000, 18000],
+          data: Array.from({ length: 7 }, () => Math.floor(Math.random() * (20000 - 3000 + 1)) + 3000),
           backgroundColor: '#00E096',
           borderRadius: 6,
           barThickness: 12

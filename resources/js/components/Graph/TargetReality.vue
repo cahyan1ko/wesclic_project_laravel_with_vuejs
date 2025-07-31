@@ -35,8 +35,14 @@ import Chart from 'chart.js/auto';
 
 export default {
   name: 'TargetRealityChart',
-  setup() {
+    setup() {
     const targetRealityChart = ref(null);
+
+    const generateRandomData = (length, min, max) => {
+      return Array.from({ length }, () =>
+        Math.floor(Math.random() * (max - min + 1)) + min
+      );
+    };
 
     onMounted(() => {
       const ctx = targetRealityChart.value.getContext('2d');
@@ -47,12 +53,12 @@ export default {
           datasets: [
             {
               label: 'Target',
-              data: [700, 800, 750, 900, 950, 1000, 1100],
+              data: generateRandomData(7, 700, 1100),
               backgroundColor: '#4AB58E',
             },
             {
               label: 'Reality',
-              data: [650, 850, 700, 850, 920, 950, 1070],
+              data: generateRandomData(7, 600, 1050),
               backgroundColor: '#FFCF00',
             },
           ],
@@ -83,6 +89,6 @@ export default {
     return {
       targetRealityChart,
     };
-  },
+  }
 };
 </script>

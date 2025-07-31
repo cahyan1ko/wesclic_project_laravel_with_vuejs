@@ -1,6 +1,6 @@
 <template>
-    <div class="w-full px-6 py-8 mx-auto relative">
-        <h1 class="text-2xl font-bold mb-6">Product Management</h1>
+    <HeaderDashboard title="Products Management" :showSearch="false"/>
+    <div class="w-full px-4 py-4 mx-auto relative">
         <div class="flex items-center justify-between mb-4">
             <div class="flex-1 mx-4 max-w-md relative">
                 <img

@@ -33,7 +33,7 @@ onMounted(() => {
         datasets: [
           {
             label: 'Loyal Customers',
-            data: [120, 150, 200, 170, 250, 300, 280, 320, 260, 330, 360, 400],
+            data: Array.from({ length: 12 }, () => Math.floor(Math.random() * 150) + 250),
             borderColor: '#A700FF',
             backgroundColor: 'rgba(124, 58, 237, 0.1)',
             tension: 0.4,
@@ -41,7 +41,7 @@ onMounted(() => {
           },
           {
             label: 'Unique Customers',
-            data: [80, 100, 140, 130, 180, 200, 190, 210, 200, 230, 250, 270],
+            data: Array.from({ length: 12 }, () => Math.floor(Math.random() * 100) + 150),
             borderColor: '#3CD856',
             backgroundColor: 'rgba(34, 197, 94, 0.1)',
             tension: 0.4,
@@ -49,14 +49,15 @@ onMounted(() => {
           },
           {
             label: 'New Customers',
-            data: [60, 90, 110, 100, 140, 160, 150, 170, 160, 190, 210, 230],
+            data: Array.from({ length: 12 }, () => Math.floor(Math.random() * 80) + 100),
             borderColor: '#EF4444',
             backgroundColor: 'rgba(239, 68, 68, 0.1)',
             tension: 0.4,
             pointRadius: 1,
           }
         ]
-      },
+      }
+      ,
       options: {
         plugins: {
           legend: {
