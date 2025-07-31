@@ -34,6 +34,7 @@ import TopProducts from '@/components/graph/TopProducts.vue'
 import SalesMapping from '@/components/graph/SalesMapping.vue'
 import VolumeService from '@/components/graph/VolumeService.vue'
 import HeaderDashboard from '../layouts/Header/Header.vue'
+import Button from '../components/Button.vue'
 
 export default {
   name: 'Dashboard',

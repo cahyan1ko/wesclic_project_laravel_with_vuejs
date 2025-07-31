@@ -15,6 +15,7 @@ import VolumeService from "./components/Graph/VolumeService.vue";
 import SalesMapping from "./components/Graph/SalesMapping.vue";
 import CustomerSatisfaction from "./components/Graph/CustomerSatisfaction.vue";
 import HeaderDashboard from "./layouts/Header/Header.vue";
+import Button from "./components/Button.vue";
 
 app.component("TodaySales", TodaySales);
 app.component("TotalRevenue", TotalRevenue);
@@ -25,5 +26,7 @@ app.component("VolumeService", VolumeService);
 app.component("SalesMapping", SalesMapping);
 app.component("CustomerSatisfaction", CustomerSatisfaction);
 app.component("HeaderDashboard", HeaderDashboard);
+
+app.component("Button", Button)
 
 app.mount("#app");

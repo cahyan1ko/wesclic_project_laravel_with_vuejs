@@ -31,18 +31,31 @@
             </td>
             <td class="py-3 px-6 text-center">
               <div class="flex justify-center items-center gap-2">
-                <button
+                <Button
                   @click="$emit('edit', product)"
-                  class="px-4 py-1.5 bg-yellow-400 hover:bg-yellow-500 text-white text-sm font-semibold rounded-lg transition"
-                >
-                  Edit
-                </button>
-                <button
+                  text="Edit"
+                  textColor="#ffffff"
+                  bgColor="#FACC15"
+                  hoverColor="#F59E0B"
+                  hoverTextColor="#ffffff"
+                  fontSize="0.875rem"
+                  padding="0.375rem 1rem"
+                  borderRadius="0.5rem"
+                  border="none"
+                />
+
+                <Button
                   @click="confirmDelete(product.id)"
-                  class="px-4 py-1.5 bg-red-500 hover:bg-red-600 text-white text-sm font-semibold rounded-lg transition"
-                >
-                  Delete
-                </button>
+                  text="Delete"
+                  textColor="#ffffff"
+                  bgColor="#EF4444"               
+                  hoverColor="#DC2626"            
+                  hoverTextColor="#ffffff"
+                  fontSize="0.875rem"
+                  padding="0.375rem 1rem"
+                  borderRadius="0.5rem"
+                  border="none"
+                />
               </div>
             </td>
           </tr>

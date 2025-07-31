@@ -15,12 +15,18 @@
                     class="w-full border border-[#5D5FEF] rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#5D5FEF]"
                 />
             </div>
-            <button
+            <Button
                 @click="showCreateModal = true"
-                class="bg-[#FFFFFF] text-[#5D5FEF] border border-[#5D5FEF] font-medium px-4 py-2 rounded-lg hover:bg-[#5D5FEF] hover:text-white"
-            >
-                Create Product
-            </button>
+                text="Create Product"
+                textColor="#5D5FEF"
+                bgColor="#FFFFFF"
+                hoverColor="#5D5FEF"
+                hoverTextColor="#FFFFFF"
+                fontSize="1rem"
+                padding="0.5rem 1rem"
+                borderRadius="0.5rem"
+                border="1px solid #5D5FEF"
+            />
         </div>
         <ListProducts
             class="mt-4"
