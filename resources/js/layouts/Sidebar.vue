@@ -73,7 +73,8 @@ const menus = [
   { label: 'Sales Report', url: 'sales-report', icon: 'sales-report-icon.png' },
   { label: 'Message', url: 'message', icon: 'messages-icon.png' },
   { label: 'Settings', url: 'settings', icon: 'settings-icon.png' },
-  { label: 'Sign Out', url: 'signout', icon: 'sign-out-icon.png'}
+  { label: 'Sign Out', url: 'signout', icon: 'sign-out-icon.png'},
+  { label: 'Useless', url: 'useless', icon: 'sign-out-icon.png'}
 ]
 
 const getIcon = (filename) => `/assets/icons/${filename}`

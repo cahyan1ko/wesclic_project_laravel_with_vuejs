@@ -7,6 +7,7 @@ import Order from "../Pages/Order.vue";
 import Settings from "../Pages/Settings.vue";
 import Message from "../Pages/Message.vue";
 import Signout from "../Pages/Signout.vue";
+import Useless from "../Pages/Useless.vue";
 
 const routes = [
     {
@@ -56,6 +57,12 @@ const routes = [
         name: "signout",
         component: Signout,
         meta: { title: "Sign Out" },
+    },
+    {
+        path: "/useless",
+        name: "useless",
+        component: Useless,
+        meta: { title: "Useless" },
     },
 ];
 
