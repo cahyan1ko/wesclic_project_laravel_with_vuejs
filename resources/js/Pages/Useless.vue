@@ -3,7 +3,6 @@
 
   <div class="min-h-screen bg-[#F9FAFB] px-4 py-8">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <!-- Calculator Card -->
       <div class="bg-white shadow-md rounded-xl p-6 w-full max-w-sm mx-auto text-center">
         <h2 class="text-xl font-semibold text-[#5D5FEF] mb-2">Calculator</h2>
         <button
@@ -14,7 +13,6 @@
         </button>
       </div>
 
-      <!-- Typing Tester Card -->
       <div class="bg-white shadow-md rounded-xl p-6 w-full max-w-sm mx-auto text-center">
         <h2 class="text-xl font-semibold text-[#5D5FEF] mb-2">Typing Tester</h2>
         <button
@@ -25,7 +23,16 @@
         </button>
       </div>
 
-      <!-- Don't Click -->
+      <div class="bg-white shadow-md rounded-xl p-6 w-full max-w-sm mx-auto text-center">
+        <h2 class="text-xl font-semibold text-[#5D5FEF] mb-2">Loading Simulator</h2>
+        <button
+          @click="open('loader')"
+          class="bg-[#5D5FEF] text-white px-4 py-2 rounded hover:bg-[#4d4fde] transition"
+        >
+          Test Loading
+        </button>
+      </div>
+
       <div class="bg-white shadow-md rounded-xl p-6 w-full max-w-sm mx-auto text-center">
         <h2 class="text-xl font-semibold text-[#5D5FEF] mb-2">Coming soon...</h2>
         <button
@@ -38,7 +45,6 @@
     </div>
   </div>
 
-  <!-- Modal -->
   <div
     v-if="openModal"
     class="fixed inset-0 backdrop-blur-sm bg-white/30 flex items-center justify-center z-50"
@@ -51,7 +57,7 @@
         &times;
       </button>
       <h3 class="text-xl font-bold text-[#5D5FEF] mb-4">
-        {{ modalType === "calculator" ? "Calculator" : "Typing Tester" }}
+        {{ modalTitle }}
       </h3>
       <component :is="modalComponent" />
     </div>
@@ -64,9 +70,23 @@ import Swal from "sweetalert2";
 
 import Kalkulator from "../components/Useless/Kalkulator/Kalkulator.vue";
 import TypingTester from "../components/Useless/TypingTester/TypingTester.vue";
+import FakeLoader from "../components/Useless/FakeLoader/FakeLoader.vue";
 
 const openModal = ref(false);
 const modalType = ref("calculator");
+
+const modalTitle = computed(() => {
+  switch (modalType.value) {
+    case "calculator":
+      return "Calculator";
+    case "typing":
+      return "Typing Tester";
+    case "loader":
+      return "Loading Simulator";
+    default:
+      return "Modal";
+  }
+});
 
 function open(type) {
   modalType.value = type;
@@ -86,6 +106,7 @@ function showAlert() {
 
 const modalComponent = computed(() => {
   if (modalType.value === "typing") return TypingTester;
+  if (modalType.value === "loader") return FakeLoader;
   return Kalkulator;
 });
 </script>
