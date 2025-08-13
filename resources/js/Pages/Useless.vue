@@ -54,6 +54,16 @@
       </div>
 
       <div class="bg-white shadow-md rounded-xl p-6 w-full max-w-sm mx-auto text-center">
+        <h2 class="text-xl font-semibold text-[#5D5FEF] mb-2">Scanner</h2>
+        <button
+          @click="open('fake-scanner')"
+          class="bg-[#5D5FEF] text-white px-4 py-2 rounded hover:bg-[#4d4fde] transition"
+        >
+          Scanner
+        </button>
+      </div>
+
+      <div class="bg-white shadow-md rounded-xl p-6 w-full max-w-sm mx-auto text-center">
         <h2 class="text-xl font-semibold text-[#5D5FEF] mb-2">Coming soon...</h2>
         <button
           @click="showAlert"
@@ -93,6 +103,7 @@ import TypingTester from "../components/Useless/TypingTester/TypingTester.vue";
 import FakeLoader from "../components/Useless/FakeLoader/FakeLoader.vue";
 import OptionsLive from "../components/Useless/OptionsLife/OptionsLive.vue";
 import MoveButton from "../components/Useless/MoveButton/MoveButton.vue";
+import FakeScanner from "../components/Useless/FakeScanner/FakeScanner.vue";
 
 const openModal = ref(false);
 const modalType = ref("calculator");
@@ -109,6 +120,8 @@ const modalTitle = computed(() => {
       return "";
     case "move-button":
       return "Move Button";
+    case "fake-scanner":
+      return "Scanner";
     default:
       return "Modal";
   }
@@ -135,6 +148,7 @@ const modalComponent = computed(() => {
   if (modalType.value === "loader") return FakeLoader;
   if (modalType.value === "options-life") return OptionsLive;
   if (modalType.value === "move-button") return MoveButton;
+  if (modalType.value === "fake-scanner") return FakeScanner;
   return Kalkulator;
 });
 </script>
